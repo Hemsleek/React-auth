@@ -15,7 +15,7 @@
 }
 
 .Form {
-  @apply flex items-center justify-center h-full;
+  @apply flex flex-col items-center justify-center h-full;
 }
 .Form form {
   @apply flex flex-col bg-gray-100 p-3 shadow-md rounded-sm;
@@ -26,4 +26,8 @@
 
 .Form button {
   @apply bg-white border-none w-1/2 mx-auto rounded-sm;
+}
+
+.Form .signupOption {
+  @apply text-[0.5rem] mt-1;
 }
