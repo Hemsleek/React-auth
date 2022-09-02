@@ -4,7 +4,5 @@ import authReducer from './authReducer'
 //TODO:redux-persist
 
 export default configureStore({
-    reducer: {
-        auth: authReducer
-    }
+    reducer: authReducer
 })

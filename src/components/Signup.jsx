@@ -1,9 +1,27 @@
+import { current } from "@reduxjs/toolkit";
 import React from "react";
 import { Link } from "react-router-dom";
+import { signupService } from "../services";
 
 const Signup = () => {
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const form = e.target;
+    const fullname = form.fullname.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const confirmPassword = form.confirmPassword.value;
+    if (confirmPassword !== password) {
+      console.log("password does not match");
+      return;
+    }
+    try {
+      const { data } = await signupService({ email, fullname, password });
+
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div className="Form">
